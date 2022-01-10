@@ -1,0 +1,12 @@
+import axios from 'axios';
+
+let url = {
+    baseURL: "https://jsonplaceholder.typicode.com"
+}
+let axiosInstance = axios.create(url);
+
+const getUsers = () => {
+    axiosInstance.get("/users")
+}
+
+export {getUsers}
