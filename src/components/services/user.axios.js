@@ -6,7 +6,7 @@ let url = {
 let axiosInstance = axios.create(url);
 
 const getUsers = () => {
-    axiosInstance.get("/users")
+    return axiosInstance.get("/users")
 }
 
 export {getUsers}

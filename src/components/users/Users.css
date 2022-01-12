@@ -1,0 +1,10 @@
+.div-box {
+    display: flex;
+}
+
+.div-box > div {
+    width: 50%;
+}
+.user-box{
+    background-color: silver;
+}
