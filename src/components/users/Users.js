@@ -1,24 +1,20 @@
 import {useEffect, useState} from "react";
-import {getUsers} from "../services/user.axios";
+import {getUsers} from "../../services/user.api";
 import User from "../user/User";
-import  './Users.css'
-import {getPostOfUser} from "../services/post.axios";
+
 export default function Users() {
-
-    let [users, setUsers] = useState([]);
-
+    const [users, setUsers] = useState([]);
     useEffect(() => {
-        getUsers().then(({data}) => setUsers([...data]))
+        getUsers().then(({data}) => {
+            console.log(data);
+            setUsers([...data])
+        })
     }, [])
     return (
-        <div className={'div-box'}>
-            <div className={"user-box"}>
-                {
-                    users.map(user => <User key={user.id} user={user}/>)
-                }
-            </div>
-
-            <div className={"user-info"}></div>
+        <div>
+            {
+                users.map((data) => <User user={data} key={data.id}/>)
+            }
         </div>
     );
 }
